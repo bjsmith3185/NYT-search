@@ -1,43 +1,33 @@
+// variables
 
-var nyArticles = $("#ny-times-articles");
-  
-var searchTerm = $("#search-term");
-var numberOfRecords = $("#number-of-records");
-var startYear = $("#start-year");
-var endYear = $("#end-year");
+var autKey = "&api-key=04af26cdd76f4b8da348f53553eadcb3";
+var queryTerm = "trump";
+var numResults = 0;
+var startYear = 0;
+var endYear = 0;
+var queryURLbase = "http://api.nytimes.com/svc/search/v2/articlesearch.json?q=";
 
+var queryURL = queryURLbase + queryTerm + autKey;
+console.log("this is the query search url: " + queryURL);
+// var to track the number of articles
+var articleCounter = 0;
+var numArticles = 10;
+// retreive user inputs and convert to variables
+// use those variables to run ajax call to the nyt
+// break down the nyt object into usable fields
+// dymamically generate html content
 
-
-$("button").on("click", function() {
-    var person = $(this).attr("data-person");
-    var startYear = $
-
-
-
-
-    var nyUrl = 'http://api.nytimes.com/svc/search/v2/articlesearch.json?q=' + searchTerm + '?begin_date=' + startYear + '?end_date=' + endYear + '=&sort=newest&api-key=04af26cdd76f4b8da348f53553eadcb3';
-
-    $.ajax({
-      url: queryURL,
-      method: "GET"
+function runQuery(numArticles, queryURL) {  //example has numArticles before queryURL
+    console.log("this is the query 2nd search url: " + queryURL);
+    $.ajax({url: queryURL, method: 'GET'})
+    .then(function(NYTData) {
+        
+        console.log(NYTData);
     })
-      .then(function(response) {
-        var results = response.data;
+}
 
-        for (var i = 0; i < results.length; i++) {
-          var gifDiv = $("<div class='item'>");
 
-          var rating = results[i].rating;
 
-          var p = $("<p>").text("Rating: " + rating);
-
-          var personImage = $("<img>");
-          personImage.attr("src", results[i].images.fixed_height.url);
-
-          gifDiv.prepend(p);
-          gifDiv.prepend(personImage);
-
-          $("#gifs-appear-here").prepend(gifDiv);
-        }
-      });
-  });
+$("#search-btn").on("click", function() {
+    runQuery();
+})

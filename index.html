@@ -1,32 +1,80 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html>
 <head>
-    <meta charset="utf-8">
-    
-  <!--  <link rel="stylesheet" type="text/css" href="assets/css/style.css">  -->
-    <title>New York Times Search</title>
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script> 
-    <script src="style.js"></script>
+        
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) --> <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<!-- Latest compiled and minified CSS --> <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"> 
+<!-- Optional theme --> <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+  <!--      <link rel="stylesheet" href="assets/css/style.css">  -->
+        <script src="js.js"></script>
+
 </head>
-   
+
+
 <body>
 
-    <div id="top-box">
-            <form id="search-box">
-                    <label for="search">Search Key Word</label>
-                    <input type="text" id="search-term"><br>
-            </form>
-    </div>
+<div class="container">
+        <div class="jumbotron">
+                <h1>NY Times Search</h1>
+        </div>
 
-    <input id="button" type="submit" value="Submit Bro">
 
-<div id="ny-times-articles"></div>
+        <div class="panel panel-default">
+                
+              
+              <div class="panel panel-default">
+                <div class="panel-heading">
+                  <h3 class="panel-title">Panel title</h3>
+                </div>
+                
+             
+
+        <form>
+                <fieldset>
+                  <div class="form-group">
+                    <label for="search">Search Term</label>
+                    <input type="text" id="TextInput" class="form-control" placeholder="input">
+                  </div>
+
+                  <div class="form-group">
+                    <label for="num-results">Results Displayed</label>
+                    <select id="Select" class="form-control">
+                      <option>1</option>
+                      <option>5</option>
+                      <option>10</option>
+                    </select>
+                  </div>
+
+                  <div class="form-group">
+                        <label for="start-year">Start Year</label>
+                        <input type="text" id="TextInput" class="form-control" placeholder="input">
+                      </div>
+
+                      <div class="form-group">
+                            <label for="end-year">End Year</label>
+                            <input type="text" id="TextInput" class="form-control" placeholder="input">
+                          </div>
+                  
+                  <button type="submit" class="btn btn-primary" id="search-btn">Submit</button>
+                  <button type="button" class="btn btn-primary">Clear</button>
+                </fieldset>
+              </form>
+            </div>
+
+            <div class="container">
+                    <h2>Results</h2>
+                    <div class="well">Basic Well</div>
+                  </div>
+                  
+
+
+
+</div>
 </body>
 
-
-
 </html>
-
-
-<!-- Button triggers new movie to be added -->
-<!--<input id="add-movie" type="submit" value=" Bro">
